@@ -1,14 +1,13 @@
 const btn = document.querySelector('.button');
 const board = document.querySelector('.board');
-const tasks = JSON.parse(localStorage.getItem('tasks')) || []; // 🔹 Load tasks
+const tasks = JSON.parse(localStorage.getItem('tasks')) || []; // ✅ Load saved tasks from localStorage
 
-renderTasks(); // 🔹 Render any previously saved tasks
-
+renderTasks(); // ✅ Render tasks when page loads
 
 btn.addEventListener('click', function(){
-    let taskName = prompt("Please enter the name of your task.")
-    // console.log(taskName, taskDetails);
+    let taskName = prompt("Please enter the name of your task.");
     tasks.push(taskName.trim());
+    localStorage.setItem('tasks', JSON.stringify(tasks)); // ✅ Save updated list
     renderTasks();
 });
 
@@ -19,7 +18,8 @@ function renderTasks(){
         const card = document.createElement('div');
         card.className = 'task-card';
         card.textContent = task;
-        const deleteBtn = document.createElement('button')
+
+        const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete';
         deleteBtn.textContent = 'Completed';
         board.appendChild(card);
@@ -27,9 +27,8 @@ function renderTasks(){
 
         deleteBtn.addEventListener('click', function(){
             tasks.splice(index, 1);
+            localStorage.setItem('tasks', JSON.stringify(tasks)); // ✅ Save after deleting
             renderTasks();
-        })
+        });
     });
-
-    
 }

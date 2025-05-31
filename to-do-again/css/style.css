@@ -1,0 +1,106 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+    height: 100vh;
+    font-family: "Special Gothic Expanded One";
+    display: flex;
+    justify-content: center;
+    
+}
+.header{
+    height:100px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button{
+    align-items: center;
+    padding: 1rem;
+} */
+ /* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+.header {
+    display: flex;
+    flex-direction: column; /* stack items vertically */
+    align-items: center;    /* center items horizontally */
+    margin-bottom: 20px;    /* space below the header */
+    gap: 10px;              /* space between title and button */
+}  
+
+.header h1 {
+  font-family: 'Special Gothic Expanded One', cursive;
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin: 0;
+  color: #2c3e50;
+}
+
+.header .button {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header .button:hover {
+  background-color: #2980b9;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Each task card style */
+.task-card {
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+  min-width: 250px;
+  max-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+/* Completed button inside task cards */
+.task-card .delete {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.task-card .delete:hover {
+  background-color: #c0392b;
+}

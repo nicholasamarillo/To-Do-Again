@@ -1,6 +1,8 @@
 const btn = document.querySelector('.button');
 const board = document.querySelector('.board');
-const tasks = [];
+const tasks = JSON.parse(localStorage.getItem('tasks')) || []; // 🔹 Load tasks
+
+renderTasks(); // 🔹 Render any previously saved tasks
 
 
 btn.addEventListener('click', function(){
